@@ -19,7 +19,6 @@ spring:
   mongodb:
     uri: ${MONGODB_URI:mongodb://localhost:27017/nexora_audit_db}
 
-# JWT (placeholders; se configurarán en fases posteriores)
 jwt:
   secret: ${JWT_SECRET:TDEATDEATDEATDEATDEATDEATDEATDEA}
   expiration-ms: ${JWT_EXPIRATION_MS:3600000}

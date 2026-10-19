@@ -3,6 +3,7 @@ package com.nexora;
 import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
+import com.nexora.adapters.out.persistence.InMemoryAuditAdapter;
 import com.nexora.adapters.out.persistence.InMemoryInventoryMovementRepository;
 import com.nexora.adapters.out.persistence.InMemoryInventoryRepository;
 import com.nexora.adapters.out.persistence.InMemoryOrderRepository;
@@ -18,7 +19,7 @@ import com.nexora.enums.*;
 public class NexoraTest {
     @Test
     void noPermiteCorreoDuplicado() {
-        UserService service = new UserService(new InMemoryUserRepository());
+        UserService service = new UserService(new InMemoryUserRepository(), new InMemoryAuditAdapter());
         service.registerBuyer(1L, "Ana", "ana@nexora.com");
         assertThrows(IllegalArgumentException.class,
                 () -> service.registerBuyer(2L, "Luis", "ana@nexora.com"));
@@ -26,7 +27,7 @@ public class NexoraTest {
 
     @Test
     void soloAdministradorPuedeIncorporarVendedor() {
-        UserService service = new UserService(new InMemoryUserRepository());
+        UserService service = new UserService(new InMemoryUserRepository(), new InMemoryAuditAdapter());
         User buyer = service.registerBuyer(1L, "Ana", "ana@nexora.com");
         assertThrows(IllegalArgumentException.class,
                 () -> service.onboardSeller(buyer, 2L, "Luis", "luis@nexora.com"));
@@ -50,7 +51,7 @@ public class NexoraTest {
     void pedidoSigueElCicloCompleto() {
         InMemoryUserRepository usersRepo = new InMemoryUserRepository();
         InMemoryProductRepository productsRepo = new InMemoryProductRepository();
-        UserService users = new UserService(usersRepo);
+        UserService users = new UserService(usersRepo, new InMemoryAuditAdapter());
         User admin = users.register(1L, "Admin", "admin@nexora.com", Role.ADMINISTRATOR);
         User buyer = users.registerBuyer(2L, "Buyer", "buyer@nexora.com");
         User seller = users.onboardSeller(admin, 3L, "Seller", "seller@nexora.com");

@@ -1,3 +1,5 @@
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\document\AuditLog.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryAuditAdapter.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryInventoryMovementRepository.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryInventoryRepository.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryOrderRepository.java
@@ -25,6 +27,8 @@ C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\s
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\jpa\repository\SpringDataJpaOrderRepository.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\jpa\repository\SpringDataJpaProductRepository.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\jpa\repository\SpringDataJpaUserRepository.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\mongo\AuditLogMongoRepository.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\mongo\AuditMongoAdapter.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\CartUseCase.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\InventoryUseCase.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\InvoiceUseCase.java
@@ -32,6 +36,7 @@ C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\s
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\ProductUseCase.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\ReturnUseCase.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\in\UserUseCase.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\out\AuditPort.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\out\InventoryMovementRepositoryPort.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\out\InventoryRepositoryPort.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\application\ports\out\OrderRepositoryPort.java
@@ -74,5 +79,6 @@ C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\s
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\enums\UserStatus.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\enums\WarehouseStatus.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\enums\WarehouseType.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\config\RequestIdFilter.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\Main.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\NexoraApplication.java

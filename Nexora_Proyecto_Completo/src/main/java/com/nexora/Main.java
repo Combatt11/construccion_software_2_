@@ -1,6 +1,7 @@
 package com.nexora;
 
 import java.math.BigDecimal;
+import com.nexora.adapters.out.persistence.InMemoryAuditAdapter;
 import com.nexora.adapters.out.persistence.InMemoryInventoryMovementRepository;
 import com.nexora.adapters.out.persistence.InMemoryInventoryRepository;
 import com.nexora.adapters.out.persistence.InMemoryOrderRepository;
@@ -27,7 +28,7 @@ public class Main {
         InMemoryInventoryRepository inventoryRepository = new InMemoryInventoryRepository();
         InMemoryInventoryMovementRepository movementRepository = new InMemoryInventoryMovementRepository();
 
-        UserService userService = new UserService(userRepository);
+        UserService userService = new UserService(userRepository, new InMemoryAuditAdapter());
         ProductService productService = new ProductService(productRepository);
         InventoryService inventoryService = new InventoryService(inventoryRepository, movementRepository);
         CartService cartService = new CartService();

@@ -1,6 +1,8 @@
+com\nexora\application\ports\out\AuditPort.class
 com\nexora\Main.class
 com\nexora\domain\exceptions\UnauthorizedOperationException.class
 com\nexora\domain\models\CartItem.class
+com\nexora\adapters\out\persistence\InMemoryAuditAdapter.class
 com\nexora\application\ports\in\CartUseCase.class
 com\nexora\domain\valueobjects\Money.class
 com\nexora\adapters\out\persistence\InMemoryInventoryRepository.class
@@ -16,6 +18,7 @@ com\nexora\adapters\out\persistence\InMemoryRepository.class
 com\nexora\domain\exceptions\DomainException.class
 com\nexora\domain\models\Category.class
 com\nexora\application\ports\out\OrderRepositoryPort.class
+com\nexora\infrastructure\config\RequestIdFilter.class
 com\nexora\application\services\ReturnService.class
 com\nexora\domain\models\Cart.class
 com\nexora\domain\models\Order.class
@@ -36,6 +39,7 @@ com\nexora\adapters\out\persistence\jpa\entity\ProductJpaEntity.class
 com\nexora\enums\OrderStatus.class
 com\nexora\enums\WarehouseType.class
 com\nexora\adapters\out\persistence\jpa\entity\InventoryJpaEntity.class
+com\nexora\adapters\out\persistence\mongo\AuditLogMongoRepository.class
 com\nexora\domain\models\InventoryMovement.class
 com\nexora\adapters\out\persistence\jpa\repository\SpringDataJpaInventoryRepository.class
 com\nexora\adapters\out\persistence\jpa\entity\OrderJpaEntity.class
@@ -44,6 +48,7 @@ com\nexora\adapters\out\persistence\jpa\adapter\OrderJpaAdapter.class
 com\nexora\adapters\out\persistence\jpa\adapter\UserJpaAdapter.class
 com\nexora\adapters\out\persistence\jpa\entity\UserJpaEntity.class
 com\nexora\application\ports\in\ReturnUseCase.class
+com\nexora\adapters\out\persistence\document\AuditLog.class
 com\nexora\adapters\out\persistence\jpa\adapter\InventoryJpaAdapter.class
 com\nexora\domain\models\Return.class
 com\nexora\application\services\InventoryService.class
@@ -56,6 +61,7 @@ com\nexora\enums\Role.class
 com\nexora\enums\InventoryMovementType.class
 com\nexora\adapters\out\persistence\jpa\mapper\UserJpaMapper.class
 com\nexora\application\ports\out\InventoryMovementRepositoryPort.class
+com\nexora\adapters\out\persistence\mongo\AuditMongoAdapter.class
 com\nexora\adapters\out\persistence\jpa\repository\SpringDataJpaInventoryMovementRepository.class
 com\nexora\domain\models\Invoice.class
 com\nexora\enums\ShipmentStatus.class
