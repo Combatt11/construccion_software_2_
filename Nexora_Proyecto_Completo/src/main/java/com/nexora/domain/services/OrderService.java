@@ -1,14 +1,14 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import com.nexora.domain.Cart;
-import com.nexora.domain.CartItem;
-import com.nexora.domain.Order;
-import com.nexora.domain.OrderItem;
-import com.nexora.domain.Product;
+import com.nexora.domain.models.Cart;
+import com.nexora.domain.models.CartItem;
+import com.nexora.domain.models.Order;
+import com.nexora.domain.models.OrderItem;
+import com.nexora.domain.models.Product;
 import com.nexora.enums.OrderStatus;
-import com.nexora.repository.InMemoryRepository;
+import com.nexora.adapters.out.persistence.InMemoryRepository;
 
 public class OrderService {
     private final InMemoryRepository<Order> orders = new InMemoryRepository<>();

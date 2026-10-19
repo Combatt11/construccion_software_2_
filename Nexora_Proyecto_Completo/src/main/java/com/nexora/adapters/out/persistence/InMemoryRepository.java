@@ -1,4 +1,4 @@
-package com.nexora.repository;
+package com.nexora.adapters.out.persistence;
 
 import java.util.ArrayList;
 import java.util.List;

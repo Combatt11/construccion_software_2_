@@ -1,12 +1,12 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.math.BigDecimal;
-import com.nexora.domain.Product;
+import com.nexora.domain.models.Product;
 import com.nexora.enums.ProductStatus;
 import com.nexora.enums.ProductType;
 import com.nexora.enums.Role;
-import com.nexora.domain.User;
-import com.nexora.repository.InMemoryRepository;
+import com.nexora.domain.models.User;
+import com.nexora.adapters.out.persistence.InMemoryRepository;
 
 public class ProductService {
     private final InMemoryRepository<Product> products = new InMemoryRepository<>();

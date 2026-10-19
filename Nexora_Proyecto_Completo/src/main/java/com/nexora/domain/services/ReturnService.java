@@ -1,10 +1,10 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import com.nexora.domain.Order;
-import com.nexora.domain.Refund;
-import com.nexora.domain.Return;
+import com.nexora.domain.models.Order;
+import com.nexora.domain.models.Refund;
+import com.nexora.domain.models.Return;
 import com.nexora.enums.OrderStatus;
 
 public class ReturnService {

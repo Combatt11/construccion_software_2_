@@ -1,4 +1,4 @@
-package com.nexora.domain;
+package com.nexora.domain.models;
 
 public class Inventory {
     private Long id; private Long productId; private Long warehouseId;

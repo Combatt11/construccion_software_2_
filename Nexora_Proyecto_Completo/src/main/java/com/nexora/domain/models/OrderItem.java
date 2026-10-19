@@ -1,4 +1,4 @@
-package com.nexora.domain;
+package com.nexora.domain.models;
 
 import java.math.BigDecimal;
 

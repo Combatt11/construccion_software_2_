@@ -1,18 +1,18 @@
 package com.nexora;
 
 import java.math.BigDecimal;
-import com.nexora.domain.Cart;
-import com.nexora.domain.Inventory;
-import com.nexora.domain.Order;
-import com.nexora.domain.Product;
-import com.nexora.domain.User;
+import com.nexora.domain.models.Cart;
+import com.nexora.domain.models.Inventory;
+import com.nexora.domain.models.Order;
+import com.nexora.domain.models.Product;
+import com.nexora.domain.models.User;
 import com.nexora.enums.ProductType;
 import com.nexora.enums.Role;
-import com.nexora.service.CartService;
-import com.nexora.service.InventoryService;
-import com.nexora.service.OrderService;
-import com.nexora.service.ProductService;
-import com.nexora.service.UserService;
+import com.nexora.domain.services.CartService;
+import com.nexora.domain.services.InventoryService;
+import com.nexora.domain.services.OrderService;
+import com.nexora.domain.services.ProductService;
+import com.nexora.domain.services.UserService;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.nexora.domain;
+package com.nexora.domain.models;
 
 import com.nexora.enums.Role;
 import com.nexora.enums.UserStatus;

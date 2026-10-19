@@ -1,10 +1,10 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.time.LocalDateTime;
-import com.nexora.domain.Inventory;
-import com.nexora.domain.InventoryMovement;
+import com.nexora.domain.models.Inventory;
+import com.nexora.domain.models.InventoryMovement;
 import com.nexora.enums.InventoryMovementType;
-import com.nexora.repository.InMemoryRepository;
+import com.nexora.adapters.out.persistence.InMemoryRepository;
 
 public class InventoryService {
     private final InMemoryRepository<Inventory> inventories = new InMemoryRepository<>();

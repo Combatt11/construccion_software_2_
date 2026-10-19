@@ -1,8 +1,8 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.time.LocalDateTime;
-import com.nexora.domain.Cart;
-import com.nexora.domain.CartItem;
+import com.nexora.domain.models.Cart;
+import com.nexora.domain.models.CartItem;
 
 public class CartService {
     public Cart createCart(Long id, Long userId) {

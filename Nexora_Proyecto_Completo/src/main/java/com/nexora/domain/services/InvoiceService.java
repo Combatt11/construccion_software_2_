@@ -1,8 +1,8 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
 import java.time.LocalDateTime;
-import com.nexora.domain.Invoice;
-import com.nexora.domain.Order;
+import com.nexora.domain.models.Invoice;
+import com.nexora.domain.models.Order;
 import com.nexora.enums.OrderStatus;
 
 public class InvoiceService {

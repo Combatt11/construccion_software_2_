@@ -1,4 +1,4 @@
-package com.nexora.domain;
+package com.nexora.domain.models;
 
 public class CartItem {
     private Long id; private Long cartId; private Long productId; private Integer quantity;

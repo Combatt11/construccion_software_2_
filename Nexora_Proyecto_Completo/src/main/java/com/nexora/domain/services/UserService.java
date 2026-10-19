@@ -1,9 +1,9 @@
-package com.nexora.service;
+package com.nexora.domain.services;
 
-import com.nexora.domain.User;
+import com.nexora.domain.models.User;
 import com.nexora.enums.Role;
 import com.nexora.enums.UserStatus;
-import com.nexora.repository.InMemoryRepository;
+import com.nexora.adapters.out.persistence.InMemoryRepository;
 
 public class UserService {
     private final InMemoryRepository<User> users = new InMemoryRepository<>();
