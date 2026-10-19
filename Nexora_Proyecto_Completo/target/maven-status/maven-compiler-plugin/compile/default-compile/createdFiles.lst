@@ -36,6 +36,7 @@ com\nexora\enums\Role.class
 com\nexora\enums\InventoryMovementType.class
 com\nexora\adapters\in\rest\controller\SellerController.class
 com\nexora\domain\models\Invoice.class
+com\nexora\infrastructure\config\DataSeeder.class
 com\nexora\domain\models\Shipment.class
 com\nexora\adapters\in\rest\dto\requests\RegisterUserRequest.class
 com\nexora\adapters\out\persistence\jpa\mapper\InventoryMovementJpaMapper.class
@@ -102,6 +103,7 @@ com\nexora\adapters\out\persistence\jpa\mapper\InventoryJpaMapper.class
 com\nexora\domain\models\Refund.class
 com\nexora\adapters\out\persistence\jpa\mapper\OrderJpaMapper.class
 com\nexora\adapters\out\persistence\jpa\adapter\InventoryMovementJpaAdapter.class
+com\nexora\infrastructure\config\CorsConfig.class
 com\nexora\adapters\in\rest\dto\responses\UserResponse.class
 com\nexora\application\services\UserService.class
 com\nexora\application\ports\in\OrderUseCase.class

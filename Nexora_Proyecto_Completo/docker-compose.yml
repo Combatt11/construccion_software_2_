@@ -25,6 +25,26 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  nexora-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nexora-app
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://mysql-db:3306/nexora_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: root
+      DB_PASSWORD: root_password
+      MONGODB_URI: mongodb://mongo-db:27017/nexora_audit_db
+      JWT_SECRET: TDEATDEATDEATDEATDEATDEATDEATDEA
+      SERVER_PORT: 8080
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+      mongo-db:
+        condition: service_started
+
 volumes:
   mysql_data:
   mongo_data:
