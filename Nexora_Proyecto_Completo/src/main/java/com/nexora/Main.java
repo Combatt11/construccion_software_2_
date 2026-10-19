@@ -1,6 +1,16 @@
 package com.nexora;
 
 import java.math.BigDecimal;
+import com.nexora.adapters.out.persistence.InMemoryInventoryMovementRepository;
+import com.nexora.adapters.out.persistence.InMemoryInventoryRepository;
+import com.nexora.adapters.out.persistence.InMemoryOrderRepository;
+import com.nexora.adapters.out.persistence.InMemoryProductRepository;
+import com.nexora.adapters.out.persistence.InMemoryUserRepository;
+import com.nexora.application.services.CartService;
+import com.nexora.application.services.InventoryService;
+import com.nexora.application.services.OrderService;
+import com.nexora.application.services.ProductService;
+import com.nexora.application.services.UserService;
 import com.nexora.domain.models.Cart;
 import com.nexora.domain.models.Inventory;
 import com.nexora.domain.models.Order;
@@ -8,19 +18,20 @@ import com.nexora.domain.models.Product;
 import com.nexora.domain.models.User;
 import com.nexora.enums.ProductType;
 import com.nexora.enums.Role;
-import com.nexora.domain.services.CartService;
-import com.nexora.domain.services.InventoryService;
-import com.nexora.domain.services.OrderService;
-import com.nexora.domain.services.ProductService;
-import com.nexora.domain.services.UserService;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userService = new UserService();
-        ProductService productService = new ProductService();
-        InventoryService inventoryService = new InventoryService();
+        InMemoryUserRepository userRepository = new InMemoryUserRepository();
+        InMemoryProductRepository productRepository = new InMemoryProductRepository();
+        InMemoryOrderRepository orderRepository = new InMemoryOrderRepository();
+        InMemoryInventoryRepository inventoryRepository = new InMemoryInventoryRepository();
+        InMemoryInventoryMovementRepository movementRepository = new InMemoryInventoryMovementRepository();
+
+        UserService userService = new UserService(userRepository);
+        ProductService productService = new ProductService(productRepository);
+        InventoryService inventoryService = new InventoryService(inventoryRepository, movementRepository);
         CartService cartService = new CartService();
-        OrderService orderService = new OrderService();
+        OrderService orderService = new OrderService(orderRepository, productRepository);
 
         User administrator = userService.register(1L, "Administrador", "admin@nexora.com", Role.ADMINISTRATOR);
         User buyer = userService.registerBuyer(2L, "Comprador", "buyer@nexora.com");
@@ -35,7 +46,7 @@ public class Main {
         Cart cart = cartService.createCart(400L, buyer.getId());
         cartService.addItem(cart, 401L, product.getId(), 2);
 
-        Order order = orderService.createOrder(500L, buyer.getId(), cart, productService.getRepository());
+        Order order = orderService.createOrder(500L, buyer.getId(), cart);
         orderService.pay(order);
         orderService.dispatch(order);
         orderService.deliver(order);

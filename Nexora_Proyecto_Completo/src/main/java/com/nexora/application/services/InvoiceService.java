@@ -1,11 +1,13 @@
-package com.nexora.domain.services;
+package com.nexora.application.services;
 
-import java.time.LocalDateTime;
+import com.nexora.application.ports.in.InvoiceUseCase;
 import com.nexora.domain.models.Invoice;
 import com.nexora.domain.models.Order;
 import com.nexora.enums.OrderStatus;
+import java.time.LocalDateTime;
 
-public class InvoiceService {
+public class InvoiceService implements InvoiceUseCase {
+    @Override
     public Invoice generate(Order order, Long invoiceId, String number) {
         if (order.getStatus() != OrderStatus.PAID && order.getStatus() != OrderStatus.DISPATCHED
                 && order.getStatus() != OrderStatus.DELIVERED && order.getStatus() != OrderStatus.FINALIZED) {
