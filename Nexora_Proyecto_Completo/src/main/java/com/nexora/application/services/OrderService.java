@@ -40,6 +40,11 @@ public class OrderService implements OrderUseCase {
     }
 
     @Override
+    public Order findById(Long id) {
+        return orders.findById(id).orElseThrow(() -> new IllegalArgumentException("Pedido no encontrado."));
+    }
+
+    @Override
     public void pay(Order order) {
         requireStatus(order, OrderStatus.PENDING_PAYMENT);
         order.setStatus(OrderStatus.PAID);

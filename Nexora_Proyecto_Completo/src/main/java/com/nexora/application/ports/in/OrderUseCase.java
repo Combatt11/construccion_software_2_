@@ -5,6 +5,7 @@ import com.nexora.domain.models.Order;
 
 public interface OrderUseCase {
     Order createOrder(Long id, Long buyerId, Cart cart);
+    Order findById(Long id);
     void pay(Order order);
     void dispatch(Order order);
     void deliver(Order order);
