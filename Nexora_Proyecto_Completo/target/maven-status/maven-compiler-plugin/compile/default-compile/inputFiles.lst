@@ -1,3 +1,4 @@
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\in\rest\controller\AuthController.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\document\AuditLog.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryAuditAdapter.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\adapters\out\persistence\InMemoryInventoryMovementRepository.java
@@ -80,5 +81,9 @@ C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\s
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\enums\WarehouseStatus.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\enums\WarehouseType.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\config\RequestIdFilter.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\security\CustomUserDetailsService.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\security\JwtAuthenticationFilter.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\security\JwtService.java
+C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\infrastructure\security\SecurityConfig.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\Main.java
 C:\Users\Alejandro\Downloads\Nexora_Proyecto_Completo\Nexora_Proyecto_Completo\src\main\java\com\nexora\NexoraApplication.java

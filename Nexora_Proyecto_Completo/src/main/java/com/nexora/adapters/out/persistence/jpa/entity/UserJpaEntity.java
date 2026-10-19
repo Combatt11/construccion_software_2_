@@ -18,6 +18,10 @@ public class UserJpaEntity {
     private String role;
     @Column(nullable = false)
     private String status;
+    @Column(name = "password_hash")
+    private String password;
+    @Column(name = "auth_token_version", nullable = false)
+    private Integer authTokenVersion = 0;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -29,4 +33,8 @@ public class UserJpaEntity {
     public void setRole(String role) { this.role = role; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public Integer getAuthTokenVersion() { return authTokenVersion; }
+    public void setAuthTokenVersion(Integer authTokenVersion) { this.authTokenVersion = authTokenVersion == null ? 0 : authTokenVersion; }
 }

@@ -20,11 +20,15 @@ public class UserService implements UserUseCase {
 
     @Override
     public User registerBuyer(Long id, String name, String email) {
-        return register(id, name, email, Role.BUYER);
+        return register(id, name, email, null, Role.BUYER);
     }
 
     @Override
     public User register(Long id, String name, String email, Role role) {
+        return register(id, name, email, null, role);
+    }
+
+    public User register(Long id, String name, String email, String passwordHash, Role role) {
         validateText(name, "El nombre es obligatorio.");
         validateText(email, "El correo es obligatorio.");
         if (id == null || users.existsById(id)) {
@@ -35,6 +39,8 @@ public class UserService implements UserUseCase {
         }
         if (role == null) throw new IllegalArgumentException("El rol es obligatorio.");
         User user = new User(id, name, email, role, UserStatus.ACTIVE);
+        user.setPassword(passwordHash);
+        user.setAuthTokenVersion(0);
         users.save(user);
         audit.record(MDC.get("requestId"), user.getId(), "REGISTER_USER", "User", user.getId(),
                 Map.of("email", email, "role", role.name()), "SUCCESS");
@@ -46,7 +52,7 @@ public class UserService implements UserUseCase {
         if (administrator == null || administrator.getRole() != Role.ADMINISTRATOR) {
             throw new IllegalArgumentException("Solo un administrador puede incorporar vendedores.");
         }
-        User seller = register(id, name, email, Role.SELLER);
+        User seller = register(id, name, email, null, Role.SELLER);
         audit.record(MDC.get("requestId"), administrator.getId(), "ONBOARD_SELLER", "User", seller.getId(),
                 Map.of("sellerEmail", email), "SUCCESS");
         return seller;

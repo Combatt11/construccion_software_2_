@@ -14,6 +14,8 @@ public class UserJpaMapper {
         u.setEmail(e.getEmail());
         u.setRole(Role.valueOf(e.getRole()));
         u.setStatus(UserStatus.valueOf(e.getStatus()));
+        u.setPassword(e.getPassword());
+        u.setAuthTokenVersion(e.getAuthTokenVersion());
         return u;
     }
 
@@ -25,6 +27,8 @@ public class UserJpaMapper {
         e.setEmail(u.getEmail());
         e.setRole(u.getRole() == null ? null : u.getRole().name());
         e.setStatus(u.getStatus() == null ? null : u.getStatus().name());
+        e.setPassword(u.getPassword());
+        e.setAuthTokenVersion(u.getAuthTokenVersion());
         return e;
     }
 }
