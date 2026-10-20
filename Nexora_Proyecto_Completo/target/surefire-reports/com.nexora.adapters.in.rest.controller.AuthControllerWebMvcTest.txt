@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.031 s <<< FAILURE! -- in com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest
+com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest.loginBadCredentialsReturns401 -- Time elapsed: 0.052 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<401> but was:<500>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest.loginBadCredentialsReturns401(AuthControllerWebMvcTest.java:69)
+
+com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest.registerMissingFieldsReturns400 -- Time elapsed: 0.030 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<500>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.nexora.adapters.in.rest.controller.AuthControllerWebMvcTest.registerMissingFieldsReturns400(AuthControllerWebMvcTest.java:45)
+
