@@ -1,59 +1,61 @@
-# Nexora — Plataforma Marketplace
+# Nexora — Plataforma Marketplace (Arquitectura Hexagonal)
 
-Proyecto académico de Construcción de Software 2.
+Nexora es una plataforma marketplace con compradores, vendedores, administradores, operadores
+logísticos y supervisores. Cubre usuarios, productos, categorías, bodegas, inventario, carritos,
+pedidos, facturación, envíos, devoluciones y reembolsos.
 
-Nexora es una plataforma marketplace que contempla compradores, vendedores, administradores,
-operadores logísticos y supervisores. El proyecto cubre usuarios, productos, categorías,
-bodegas, inventario, carritos, pedidos, facturación, envíos, devoluciones y reembolsos.
+El proyecto fue migrado a **arquitectura hexagonal (Ports & Adapters + DDD)** sobre Spring Boot 4.1,
+siguiendo el modelo del sistema bancario de referencia del curso.
 
-## Tecnologías
+## Stack tecnológico
 
-- Java 17
-- Maven
-- JUnit 5 para pruebas
-- VS Code con Extension Pack for Java
+- Java 17, Maven
+- Spring Boot 4.1 (Web, Security, Data JPA, Data MongoDB, Validation, Actuator)
+- Persistencia relacional: MySQL 8 (JPA/Hibernate, auto-DDL)
+- Auditoría NoSQL: MongoDB (colección `audit_logs`)
+- Seguridad: JWT stateless (JJWT 0.12.6) + BCrypt, invalidación por versión de token
+- Docker / Docker Compose
+- Pruebas: JUnit 5 + Mockito
 
-## Estructura
+## Arquitectura
 
-```text
-nexora/
-├── SDD/                         # Documentación propia de Nexora
-├── src/
-│   ├── main/java/com/nexora/
-│   │   ├── domain/              # Entidades del dominio
-│   │   ├── enums/               # Estados, tipos y roles
-│   │   ├── repository/          # Persistencia temporal en memoria
-│   │   ├── service/             # Reglas y casos de uso principales
-│   │   └── Main.java             # Ejecución de demostración
-│   └── test/java/com/nexora/    # Pruebas de reglas principales
-├── pom.xml
-├── .gitignore
-└── LICENSE
-```
+Hexagonal (Ports & Adapters). Paquetes bajo `com.nexora`:
 
-## Ejecutar en VS Code
+- `domain/`: modelos, value objects, enums, excepciones (Java puro).
+- `application/`: puertos de entrada (`ports/in`), puertos de salida (`ports/out`), servicios (casos de uso).
+- `adapters/`: entrada REST (controllers, DTOs, mappers, handler), salida (JPA, Mongo, in-memory).
+- `infrastructure/`: seguridad (JWT, filtros), config (CORS, seeder), request id.
 
-1. Abrir la carpeta raíz `Nexora_Proyecto_Completo` en VS Code.
-2. Tener instalado JDK 17 o superior.
-3. Instalar Extension Pack for Java.
-4. Abrir `src/main/java/com/nexora/Main.java`.
-5. Presionar **Run Java**.
+## Ejecutar en local
 
-## Ejecutar pruebas
-
-Desde la terminal ubicada en la carpeta raíz:
+Prerrequisitos: JDK 17+, Maven, MySQL 8 y MongoDB (o Docker).
 
 ```bash
+mvn clean compile
 mvn test
+mvn spring-boot:run
 ```
 
-## Decisiones de diseño para Nexora
+La app queda en `http://localhost:8080`. Health: `http://localhost:8080/actuator/health`.
 
-Para esta primera implementación se usa persistencia en memoria y una arquitectura sencilla
-separada en dominio, servicios y repositorio. Esto permite probar las reglas de negocio sin
-introducir todavía una base de datos o un framework web.
+## Ejecutar con Docker
 
-Las clases y servicios implementan las reglas que ya fueron definidas para Nexora, especialmente:
-identificadores y correos únicos, un rol por usuario, incorporación de vendedores por administrador,
-inventario no negativo, restricción de inventario dañado, ciclo de estados del pedido y bloqueo de
-modificaciones cuando el pedido está finalizado.
+```bash
+docker compose up -d --build
+```
+
+Servicios: MySQL (3306), MongoDB (27017), app (8080).
+
+## Documentación
+
+- `SDD/architecture.md` — arquitectura hexagonal.
+- `SDD/api.md` — endpoints REST.
+- `SDD/data_model.md` — modelo de datos.
+- `SDD/security.md` — seguridad JWT.
+- `VALIDATION.md` — guía de validación end-to-end.
+- `MIGRATION_PLAN.md` — plan de migración por fases.
+
+## Credenciales seed (desarrollo)
+
+- Admin: `admin@nexora.com` / `admin123`
+- Seller: `seller@nexora.com` / `seller123`

@@ -1,7 +1,10 @@
 com\nexora\infrastructure\security\CustomUserDetailsServiceTest.class
 com\nexora\application\services\OrderServiceTest.class
 com\nexora\NexoraTest.class
+com\nexora\adapters\in\rest\controller\SellerControllerWebMvcTest.class
 com\nexora\application\services\InventoryServiceTest.class
+com\nexora\adapters\in\rest\controller\BuyerControllerWebMvcTest.class
+com\nexora\adapters\in\rest\controller\AdminControllerWebMvcTest.class
 com\nexora\application\services\ProductServiceTest.class
 com\nexora\application\services\CartServiceTest.class
 com\nexora\application\services\UserServiceTest.class
